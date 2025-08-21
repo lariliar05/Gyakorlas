@@ -1,16 +1,22 @@
-#szines {
+label, p {
     color: #3498db; 
     font-family: 'Arial', sans-serif;
     font-size: 18px;
     font-weight: bold;
 }
+
 #visszaallitas{
     color: #e74c3c; 
     font-size: 16px;
     
 }
+
 #szamolas {
     color: #2ecc71; 
     font-size: 20px;
     font-weight: bold;
+}
+
+.ownstyle {
+  color: #999922;
 }
