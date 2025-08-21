@@ -13,23 +13,66 @@ const sportok = {
     "Úszás": 600,
     "Aerobik": 720   
 }
-
+/*
+const sportok = [
+    { sport: "Futás", kcal: 680 },
+    { sport: "Focizás", kcal: 550 },
+    { sport: "Bringázás", kcal: 480 },
+    { sport: "Hegymászás", kcal: 420 },
+    { sport: "Lovaglás", kcal: 370 },
+    { sport: "Túrázás", kcal: 360 },
+    { sport: "Kajakozás", kcal: 340 },
+    { sport: "Súlyzós e, kcal:zés": 320 },
+    { sport: "Pingpongozás", kcal: 270 },
+    { sport: "Kutyasétáltatás", kcal: 200 },
+    { sport: "Muay T, kcal:ai": 790 },
+    { sport: "Úszás", kcal: 600 },
+    { sport: "Aerobik", kcal: 720 } 
+]
+*/
 const fejlec = ["Sport, mozgás", "kcal/óra", "perc", "kcal"]
-document.onload = addTable(sportok,fejlec,container)
 
-function addTable(obj,arr,parent) {
+document.onload = addTable(sportok, fejlec)
+
+//for (var index = 0; index < sportok.length; index++) {
+//}
+
+
+/*
+function add(x, y) {
+  let eredmeny = x + y;
+  console.log(eredmeny);
+}
+
+add(8, 2);
+add(10, 6);
+
+const titkosSzamEgy = 89;
+const tikosSzamKetto = 76;
+add(titkosSzamEgy, tikosSzamKetto);
+*/
+
+
+function addTable(obj, arr) {
+    const parent = document.getElementById("kiskutya");
     const table = document.createElement("table")
     parent.appendChild(table)
 
     const tr = document.createElement("tr")
     table.append(tr)
 
+    for (index = 0; index < arr.length; index++) {
+        const th = document.createElement("th")
+        th.innerText = arr[index]
+        tr.appendChild(th)
+    }
+    /*
     arr.map(elem => {
         const th = document.createElement("th")
         th.innerText = elem
         tr.appendChild(th)
     })
-
+*/
     for (let key in obj) {
         const tr = document.createElement("tr")
         table.appendChild(tr)
