@@ -1,0 +1,40 @@
+#Email{
+    margin-left: 20px;
+    font-size: 20px; 
+                
+}
+#jelszo{
+    margin-left: 20px;
+    font-size: 20px; 
+                
+}
+#magaregist{
+    margin-left: 20px;
+    font-style: italic;
+    font-size: 15px;
+    margin-top: auto;
+}
+#magaa{
+    text-decoration: none;
+    color: blue;
+    font-size: 15px;
+    
+}
+#login{
+    font-size: 20px; 
+    margin-top: 10px;
+                
+}
+#Regall{
+    width: 600px;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 20px;
+                
+}
+.vissza{
+    margin-left: 50px;
+}
+.inputbeljebb{
+    margin-left: 20px;
+}
