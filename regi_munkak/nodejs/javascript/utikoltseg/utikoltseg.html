@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="utikoltseg.css">
+    <script src="utikoltseg.js" defer></script>
+    <title>Útiköltség</title>
+</head>
+
+<body>
+    <h1>Útiköltség elszámolás</h1>
+    <form>
+        <label for="tipus">Gépjármű típusa:</label>
+        <input type="text" id="tipus"><br><br>
+        <label for="uzemanyag">Üzemanyag fajtája:</label>
+        <select id="uzemanyag">
+            <option value="benzin">Benzin</option>
+            <option value="gazolaj">Gázolaj</option>
+        </select><br><br>
+        <label for="norma">Fogyasztási norma:</label>
+        <select id="norma">     
+        </select><br><br>
+        <label for="datum">Utazás dátuma:</label>
+        <input type="date" id="datum"><br><br>
+        <label for="ar">Egységár:</label>
+        <input type="text" id="ar"><br><br>
+        <label for="tavolsag">Távolság:</label>
+        <input type="text" id="tavolsag"><br><br>
+        <input type="button" value="Számolás" id="szamolas">
+    </form>
+    <p id="utikoltseg">Útiköltség: </p>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>JQuery2</title>
+    <script>
+        $(document).ready(function(){
+            $('p').text('Ez egy szöveg')
+            $('p').css("background-color", "lightgray")
+            $('h1').hover(zoldreszinez)
+            $('h1').mouseleave(feketereszinez)
+            function zoldreszinez() {
+                $(this).css("color", "green")
+            }
+            function feketereszinez() {
+                $(this).css("color", "black")
+            }
+        })
+    </script>
+</head>
+<body>
+    <h1>JQuery teszt</h1>
+    <p></p>
+</body>
+</html>

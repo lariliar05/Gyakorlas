@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+   <table id="tablazat">
+    <!-- <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>E-mail</th>
+    </tr> -->
+   </table>
+   <script>
+    const Adatok = [
+        {
+            id: "1",
+            name: "Zámbó Jimmy",
+            email: "jimmy@kiraly.hu",
+            bday: "1958"
+        },
+        {
+            id: "2",
+            name: "Michael Jackson",
+            email: "jack@atlagos.hu"            
+        },
+        {
+            id: "3",
+            name: "Korda György",
+            email: "gyuri@repter.hu"            
+        },
+        {
+            id: "4",
+            name: "Gáspár Győző",
+            email: "dikma@gyozike.hu"            
+        },
+        {
+            id: "5",
+            name: "Majoros Péter",
+            email: "majka@valovilag.hu"            
+        }
+    ]
+
+    document.querySelector("body").onload = function(){
+        addTH(Adatok)
+        addTR(Adatok)        
+    }
+
+    function addTR(arr) {
+        arr.map(data => {
+            let tr = document.createElement("tr")
+            tablazat.appendChild(tr)
+            const keys = Object.keys(data);
+            keys.map(key => {
+                addTD(tr, data[key])
+            })    
+        })
+    }
+
+    function addTH(arr) {
+        let tr = document.createElement("tr")
+        tablazat.appendChild(tr)
+        const keys = Object.keys(arr[0])
+        keys.map(key => {
+            let th = document.createElement("th")
+            th.innerHTML = key
+            tr.appendChild(th)
+        })
+
+    }
+
+    function addTD(parent, text) {
+            let td = document.createElement("td")
+            td.innerText = text
+            parent.appendChild(td)
+        }
+
+   </script>
+</body>
+</html>

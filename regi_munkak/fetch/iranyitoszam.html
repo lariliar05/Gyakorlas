@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="iranyitoszam.js" defer></script>
+</head>
+<body>
+    <form>
+
+        <label for="irszam">Irányítószám</label>
+        <input type="text" name="irszam" id="irszam">
+
+    </form>
+    <p>Helység</p><input type="text" name="varos" id="varos">
+    <p>Lat</p><input type="text" name="lat" id="lat">
+    <p>Lng</p><input type="text" name="lng" id="lng">
+    <br>
+    <br>
+    <button id="gomb">Időjárás</button>
+    <p>Aktuális hőmérséklet</p><div id="hom"></div>
+    <table>
+        
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>

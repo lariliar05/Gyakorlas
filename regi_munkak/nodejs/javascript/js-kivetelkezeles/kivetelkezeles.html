@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kivételkezelés</title>
+</head>
+
+<body>
+    <h1>Kivételkezelés</h1>
+    <p>Adjon meg egy pozitív számot!</p>
+    <input type="text">
+    <button>Ellenőrzés</button>
+    <p id="error"></p>
+    <p id="teszt"></p>
+    <script>
+        try {
+            alert("Nincs hiba")
+        } catch (e) {
+            document.getElementById("error").innerText = e.message
+        } finally {
+            document.getElementById("teszt").innerText = "Ez mindenképpen lefut"
+        }
+        document.getElementById("teszt").innerText += "Ez is mindenképpen lefut"
+
+
+        document.querySelector("button").onclick = myControl
+        function myControl() {
+            let x = document.querySelector("input").value
+            try {
+                if (x == "") throw "Nem adtál meg számot"
+                if (isNaN(x)) throw "Nem számot adtál meg"
+                x = Number(x)
+                if (x < 0) throw "Negatív szám"
+            }
+            catch (e) {
+                document.getElementById("error").innerText = e
+            }
+        }
+    </script>
+</body>
+
+</html>

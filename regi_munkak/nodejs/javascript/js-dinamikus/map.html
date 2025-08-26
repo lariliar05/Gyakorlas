@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+
+<body>
+    <h2>Map metódus</h2>
+    <p id="teszt"></p>
+    <script>
+        const szamok = [4, 16, 9, 25, 36]
+        const gyok = szamok.map(Math.sqrt)
+        teszt.innerHTML = szamok + "<br>"
+        teszt.innerHTML += gyok + "<br>"
+
+        function szorzas2vel(szam) {
+            return szam * 2
+        }
+
+        const szorzas2 = szamok.map(szorzas2vel)
+
+        teszt.innerHTML += szorzas2 + "<br>"
+
+        const szorzas3mal = szamok.map(szam => szam * 3)
+
+        teszt.innerHTML += szorzas3mal + "<br>"
+
+        const kings = [
+            {
+                firstname: "Zámbó",
+                lastname: "Jimmy"
+            },
+            {
+                firstname: "Zámbó",
+                lastname: "Jimmy"
+            },
+            {
+                firstname: "Zámbó",
+                lastname: "Jimmy"
+            },
+        ]
+
+        function getFullname(king) {
+            return king.firstname + " " + king.lastname
+        }
+
+        // const fullkings = kings.map(king => king.firstname + " " + king.lastname)
+        // const fullkings = kings.map(king => king.firstname.concat(" ",king.lastname))
+        
+        const fullkings = kings.map(getFullname)
+        teszt.innerHTML += "<br>" + fullkings + "<br>"
+
+
+
+
+    </script>
+</body>
+
+</html>

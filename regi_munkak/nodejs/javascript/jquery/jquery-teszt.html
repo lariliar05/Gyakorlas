@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>JQuery</title>
+</head>
+<body>
+    <p></p>
+    <h2></h2>
+    <div class="piros">Lorem ipsum dolor sit amet.</div>
+    <div id="zold">Lorem ipsum dolor sit amet.</div>
+    <br>
+    <button>Klikk</button>
+    <br>
+    <div class="kek"></div>
+<script>
+    $('p').text('Helló, Világ!')
+    $('h2').html('<i>Ez a szöveg dőlt</i>')
+    $('.piros').css("color", "red")
+    $('#zold').css({
+        "color": "green",
+        "background-color": "yellow",
+        "font-size": "20px"
+    })
+    $('button').click(function() {
+        $('.kek').text('Klikkeltél!')
+        $('.kek').css("color", "#0000DD")
+        $(this).hide(1)
+    })
+</script>    
+</body>
+</html>

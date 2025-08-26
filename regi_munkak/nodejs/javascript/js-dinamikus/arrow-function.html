@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow</title>
+</head>
+<body>
+    <h2>Arrow Function</h2>
+    <p id="eredmeny"></p>
+    <script>
+        //1. példa paraméter
+        function szorzas(a, b) {
+            return a * b
+        }
+
+        let szorzas2 = (a, b) => a * b
+
+        let szorzas3 = (a, b) => {
+            return a * b
+        }
+
+        eredmeny.innerHTML = szorzas(3,4) + "<br>"
+        eredmeny.innerHTML += szorzas2(2,5) + "<br>"
+        
+        //2. példa paraméter nélkül
+        function hello() {
+            return "Hello, World!"
+        }
+        
+        let hello2 = () => "Hello, World!"
+        
+        eredmeny.innerHTML += hello() + "<br>"
+        eredmeny.innerHTML += hello2() + "<br>"
+    </script>
+</body>
+</html>

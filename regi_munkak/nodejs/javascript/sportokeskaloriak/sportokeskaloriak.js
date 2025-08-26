@@ -1,0 +1,136 @@
+const sportok = {
+    "Futás": 680,
+    "Focizás": 550,
+    "Bringázás": 480,
+    "Hegymászás": 420,
+    "Lovaglás": 370,
+    "Túrázás": 360,
+    "Kajakozás": 340,
+    "Súlyzós edzés": 320,
+    "Pingpongozás": 270,
+    "Kutyasétáltatás": 200
+}
+
+const fejlec = ["Sport, mozgás", "kcal/óra", "perc", "kcal"]
+document.onload = addTable(sportok,fejlec,container)
+
+function addTable(obj,arr,parent) {
+    const table = document.createElement("table")
+    parent.appendChild(table)
+
+    const tr = document.createElement("tr")
+    table.append(tr)
+
+    arr.map(elem => {
+        const th = document.createElement("th")
+        th.innerText = elem
+        tr.appendChild(th)
+    })
+
+    for (let key in obj) {
+        const tr = document.createElement("tr")
+        table.appendChild(tr)
+
+        //1.oszlop
+        const td1 = document.createElement("td")
+        td1.innerText = key
+        tr.appendChild(td1)   
+
+        //2.oszlop
+        const td2 = document.createElement("td")
+        td2.innerText = obj[key]
+        td2.className = "kcalperora"
+        tr.appendChild(td2)
+        
+        //3.oszlop
+        const td3 = document.createElement("td")        
+        tr.appendChild(td3)
+        const input = document.createElement("input")
+        input.type = "number"
+        input.className = "perc"
+        input.min = "0"
+        input.max = "500"
+        input.step = "5"
+        td3.appendChild(input)
+
+        //4.oszlop
+        const td4 = document.createElement("td")        
+        tr.appendChild(td4)
+        const input2 = document.createElement("input")
+        input2.type = "text"
+        input2.disabled = true
+        input2.className = "kcal"
+        td4.appendChild(input2)
+      }
+
+      //összesen sor
+      const tr_osszesen = document.createElement("tr")
+      tr_osszesen.innerHTML=`<tr>
+      <td colspan="2">Összesen:</td>
+      <td><input type="text" id="sumperc" size="5" disabled></td>
+      <td><input type="text" id="sumkcal" size="5" disabled></td></tr>`
+      table.appendChild(tr_osszesen)
+
+      //arány sor
+      const tr_arany = document.createElement("tr")
+      tr_arany.innerHTML=`<tr>
+      <td colspan="3">Napi energiaszükséglet (2000 kcal) arányában:</td>
+      <td><input type="text" id="arany" size="5" disabled></td></tr>`
+      table.appendChild(tr_arany)
+      
+}
+
+let percek = document.querySelectorAll('.perc')
+
+for (let i = 0; i < percek.length; i++) {
+    percek[i].addEventListener('change', function() {
+        szamol(i)
+        sumperc()
+        sumkcal()
+        arany()
+    })    
+}
+
+function szamol(x) {
+    let kcalperora = document.querySelectorAll('.kcalperora')[x].innerHTML
+    let perc = document.querySelectorAll('.perc')[x].value
+    let kcal = document.querySelectorAll('.kcal')[x]
+    kcal.value = Math.round(Number(kcalperora) * Number(perc) / 60)
+}
+
+//adatok törlése
+ function torles() {
+    let inputok = document.querySelectorAll("input")
+    for (let i = 0; i < inputok.length; i++) {
+        inputok[i].value = ""        
+    }
+ }
+ document.querySelector("button").onclick = torles
+
+ //összes perc
+ function sumperc() {
+    let percek = document.querySelectorAll(".perc")
+    let osszesperc = 0
+    for (let i = 0; i < percek.length; i++) {
+        osszesperc += Number(percek[i].value)        
+    }
+    document.getElementById("sumperc").value = osszesperc
+ }
+
+ //összes kaloria
+ function sumkcal() {
+    let kaloriak = document.querySelectorAll(".kcal")
+    let osszeskcal = 0
+    for (let i = 0; i < kaloriak.length; i++) {
+        osszeskcal += Number(kaloriak[i].value)        
+    }
+    document.getElementById("sumkcal").value = osszeskcal
+ }
+
+ function arany() {
+    let sumkcal = document.getElementById("sumkcal").value
+    document.getElementById("arany").value = Math.round(sumkcal / 2000 * 100) + " %"
+ }
+
+
+

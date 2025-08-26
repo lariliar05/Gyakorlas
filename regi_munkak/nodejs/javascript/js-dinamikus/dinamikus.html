@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .teszt {
+            background-color: pink;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="addDiv" onclick="addDiv()">Div hozzáadása</button>
+    <button id="removeDiv" onclick="removeDiv()">Div törlése</button>
+    <button id="removeAllDiv" onclick="removeAllDiv()">Összes Div törlése</button>
+    <div id="listDiv"></div>
+<script>
+    function addDiv() {
+        let tesztDiv = document.createElement("div") //elem (div)
+        let parent = document.getElementById("listDiv") //hova hozza létre
+        tesztDiv.innerText = "Ez egy tesztDiv"
+        //tesztDiv.style.backgroundColor = "pink"
+        tesztDiv.className = "teszt"      
+        parent.appendChild(tesztDiv) //elem hozzáadása
+    }
+
+    function removeDiv() {
+        let tesztDiv = document.querySelector(".teszt")
+        let parent = document.getElementById("listDiv")
+        parent.removeChild(tesztDiv)
+    }
+
+    function removeAllDiv() {
+        let tesztDivLista = document.querySelectorAll(".teszt")
+        for (let i = 0; i < tesztDivLista.length; i++) {
+                tesztDivLista[i].remove()       
+        }
+    }
+</script>    
+</body>
+</html>
