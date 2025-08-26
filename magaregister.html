@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="magaregister.js" defer></script>   
+    <link rel="stylesheet" href="magacss.css">
+    <a href="Maga.html"></a>
+    <title>Maga Regisztráció</title>
+</head>
+<body>
+
+
+<div id="Regall">
+    <label for="Vezeteknev" id="vezetnev">Vezeteknév:</label>
+    <input type="text" id="vezetnev"class="inputbeljebb">
+    <br><br>
+    <label for="Keresztnev" id="keresztesnev">Keresztnév:</label>
+    <input type="text" id="keresztesnev"class="inputbeljebb">
+
+
+    <br><br>
+    <label for="email" id="">Email cím:</label>
+    <input type="email" id="email" class="inputbeljebb">
+    <br><br>
+    <label for="jelszo2">Jelszó:</label>
+    <input type="password" id="jelszo2" class="inputbeljebb">
+    <br><br>
+    <label for="szuldat" id="">Születési dátum:</label>
+    <input type="date" id="szuldat"min="1900-01-01">
+    <br><br>
+
+    <label>Nem:</label>
+        <input type="radio" name="nem" value="ferfi"> Férfi
+        <input type="radio" name="nem" value="no"> Nő
+        <input type="radio" name="nem" value="egyeb"> Egyéb
+    <br><br>
+
+    <label for="elfogad">Elfogadom a feltételeket!</label>
+    <input type="checkbox" id="elfogad">
+    <br><br>
+    
+
+    
+    <button id="megsem">Mégse</button>
+    <button id="regsiztralgomb">Regisztrálok</button>
+    <button class="vissza" onclick="location.href='Maga.html'">Vissza</button>
+    
+</div>
+
+</body>
+</html>
